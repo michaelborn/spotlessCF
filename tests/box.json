@@ -1,0 +1,23 @@
+{
+    "dependencies":{
+        "coldbox":"6.6.0-snapshot",
+        "testbox":"4.6.0-snapshot"
+    },
+    "description":"",
+    "devDependencies":{},
+    "ignore":[
+        "**/.*",
+        "/test/",
+        "/tests/"
+    ],
+    "installPaths":{
+        "coldbox":"coldbox/",
+        "testbox":"testbox/"
+    },
+    "location":"",
+    "name":"Test",
+    "private":false,
+    "slug":"moduleTest",
+    "type":"tests",
+    "version":"1.0.0"
+}

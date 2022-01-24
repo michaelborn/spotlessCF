@@ -2,6 +2,7 @@
 modules
 coldbox
 testbox
+lib
 
 # Secrets, probably for testing
 .env
