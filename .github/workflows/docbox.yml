@@ -1,0 +1,28 @@
+name: DocBox
+on:
+  push:
+    branches:
+      - master
+      - main
+    paths:
+      - '**.cfc' # Only run if *.cfc files are modified
+
+env:
+  PACKAGE_NAME: spotlessCF
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+      
+      - name: Generate Docs
+        uses: Ortus-Solutions/commandbox-action@v1
+        with:
+          cmd: docbox generate mapping=${{ env.PACKAGE_NAME }} excludes=tests|ModuleConfig strategy-outputDir=docs strategy-projectTitle=${{ env.PACKAGE_NAME }}
+      
+      - name: Commit Docs to Repo
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "📖 DOC: Auto-generate API docs"
