@@ -1,0 +1,13 @@
+# dependencies
+modules
+coldbox
+testbox
+
+# Secrets, probably for testing
+.env
+
+# dev settings and resources
+.vscode
+tests/engine
+tests/coldbox
+tests/testbox

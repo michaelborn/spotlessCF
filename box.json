@@ -1,0 +1,55 @@
+{
+    "author":"Michael Born <michael@ortussolutions.com>",
+    "dependencies":{
+        "spotless-lib-2.22.0":"jar:https://search.maven.org/remotecontent?filepath=com/diffplug/spotless/spotless-lib/2.22.0/spotless-lib-2.22.0.jar"
+    },
+    "description":"Format source code using the Spotless java library",
+    "changelog" : "CHANGELOG.md",
+    "devDependencies":{
+        "coldbox":"6.6.0-snapshot",
+        "testbox":"4.6.0-snapshot"
+    },
+    "ignore":[
+        "**/.*",
+        "/test/",
+        "/tests/"
+    ],
+    "installPaths":{
+        "coldbox":"tests/coldbox/",
+        "spotless-lib-2.22.0":"lib/spotless-lib-2.22.0/",
+        "testbox":"tests/testbox/"
+    },
+    "instructions":"",
+    "keywords":[
+        "formatter",
+        "beautify",
+        "prettify",
+        "spotless"
+    ],
+    "license":[
+        {
+            "type":"BSD-3",
+            "URL":"https://github.com/michaelborn/spotlessCF/blob/main/LICENSE"
+        }
+    ],
+    "location":"ForgeboxStorage",
+    "name":"SpotlessCF",
+    "private":false,
+    "projectURL":"https://github.com/michaelborn/spotlessCF",
+    "repository":{
+        "type":"git",
+        "URL":"https://github.com/michaelborn/spotlessCF"
+    },
+    "scripts":{},
+    "shortDescription":"Code formatter for sql,html,vue, yaml, and much more using Spotless.",
+    "slug":"spotlessCF",
+    "testbox":{
+        "runner":[
+            {
+                "default":"http://localhost:9779/tests/runner.cfm"
+            }
+        ]
+    },
+    "type":"modules",
+    "version":"1.0.0"
+}
