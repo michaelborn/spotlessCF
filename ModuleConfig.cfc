@@ -70,8 +70,6 @@ component {
 
 		// module settings - stored in modules.name.settings
 		settings = {
-			// this MUST match the spotless version name in the downloaded jar.
-			spotlessVersion : "2.22.0"
 		};
 
 		// Custom Declared Points
@@ -84,7 +82,10 @@ component {
 		// ];
 
 		// Binder Mappings
-		binder.map( "SpotlessLoader" ).to("#moduleMapping#.models.Loader");
+		binder.map( "SpotlessLoader" ).to("#moduleMapping#.models.Loader").initWith({
+			// this MUST match the spotless version name in the downloaded jar.
+			spotlessVersion : "2.22.0"
+		});
 
 	}
 
