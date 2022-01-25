@@ -196,7 +196,7 @@ Class
 			<li class="label label-danger label-annotations">
 				accessors
 				
-				: false
+				: true
 				
 			</li>
 			&nbsp;
@@ -225,92 +225,6 @@ Class
 
 
 
-
-<!-- ========== METHOD SUMMARY =========== -->
-
-<a name="property_summary"><!-- --></a>
-<table class="table table-bordered table-hover">
-	<tr class="info">
-		<th align="left" colspan="5">
-			<strong>Property Summary</strong>
-		</th>
-	</tr>
-	<tr class="info">
-		<th align="left">
-			<strong>type</strong>
-		</th>
-		<th align="left">
-			<strong>property</strong>
-		</th>
-		<th align="left">
-			<strong>default</strong>
-		</th>
-		<th align="left">
-			<strong>serializable</strong>
-		</th>
-		<th align="left">
-			<strong>required</strong>
-		</th>
-	</tr>
-
-	
-	
-	
-	<tr>
-		<td align="right" valign="top" width="1%">
-			<code>any</code>
-		</td>
-		<td>
-			<strong><a href="Loader.html#spotlessVersion()">spotlessVersion</A></strong>
-			<br>
-			
-			<br><br>
-			<ul>
-			
-				
-			
-				
-				<li class="label label-default label-annotations">access = public</li>
-				
-			
-				
-			
-				
-			
-				
-				<li class="label label-default label-annotations">returntype = any</li>
-				
-			
-				
-				<li class="label label-default label-annotations">inject = coldbox:setting:spotlessVersion@spotlessCF</li>
-				
-			
-				
-			
-				
-			
-				
-			
-			</ul>
-
-		</td>
-		<td align="right" valign="top" width="1%">
-			
-		</td>
-		<td align="right" valign="top" width="1%">
-			<code>
-				true
-			</code>
-		</td>
-		<td align="right" valign="top" width="1%">
-			<code>
-				false
-			</code>
-		</td>
-	</tr>
-	
-	</tr>
-</table>
 
 
 
@@ -357,10 +271,8 @@ Class
 			<code>any</code>
 		</td>
 		<td>
-			<strong><a href="Loader.html#ensureSpotlessAvailability()">ensureSpotlessAvailability</A></strong>()
+			<strong><a href="Loader.html#getSQLFormatter()">getSQLFormatter</A></strong>()
 			<br>
-			
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Test for spotless jar availability and throw an error if not available.
 			
 		</td>
 	</tr>
@@ -372,8 +284,23 @@ Class
 			<code>private&nbsp;any</code>
 		</td>
 		<td>
-			<strong><a href="Loader.html#load()">load</A></strong>(string className)
+			<strong><a href="Loader.html#initSpotless()">initSpotless</A></strong>(string className)
 			<br>
+			
+		</td>
+	</tr>
+	
+	
+	
+	<tr>
+		<td align="right" valign="top" width="1%">
+			<code>any</code>
+		</td>
+		<td>
+			<strong><a href="Loader.html#loadClass()">loadClass</A></strong>(string className)
+			<br>
+			
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Test for spotless availability and throw an error if not available.
 			
 		</td>
 	</tr>
@@ -440,65 +367,6 @@ Class
 
 <!-- ============ PROPERTY DETAIL ========== -->
 
-	<a name="property_detail"><!-- --></a>
-	<table class="table table-bordered">
-		<tr class="info">
-			<th colspan="1" align="left">
-				<strong>Property Detail</strong>
-			</th>
-		</tr>
-	</table>
-
-	
-		
-		<a name="spotlessVersion()"><!-- --></a>
-		<h3>spotlessVersion</h3>
-
-		<kbd>
-			property any
-			<strong>spotlessVersion</strong>
-			
-		</kbd>
-
-		<br><br>
-		
-
-		<dl>
-		<dt><strong>Attributes:</strong></dt>
-		
-			
-		
-			
-			<dd><code>access</code> - public</dd>
-			
-		
-			
-			<dd><code>required</code> - false</dd>
-			
-		
-			
-		
-			
-			<dd><code>returntype</code> - any</dd>
-			
-		
-			
-			<dd><code>inject</code> - coldbox:setting:spotlessVersion@spotlessCF</dd>
-			
-		
-			
-		
-			
-		
-			
-			<dd><code>serializable</code> - true</dd>
-			
-		
-		</dl>
-
-		<hr>
-	
-
 
 
 
@@ -520,19 +388,16 @@ Class
 
 
 	
-	<a name="ensureSpotlessAvailability()"><!-- --></a>
+	<a name="getSQLFormatter()"><!-- --></a>
 	<h3>
-		ensureSpotlessAvailability
+		getSQLFormatter
 		
 	</h3>
 
-	<kbd>public any <strong>ensureSpotlessAvailability</strong>()</kbd>
+	<kbd>public any <strong>getSQLFormatter</strong>()</kbd>
 
 	<br><br>
 
-	
-		<p>Test for spotless jar availability and throw an error if not available.
-Used in module initialization.</p>
 	
 
 	
@@ -555,16 +420,58 @@ Used in module initialization.</p>
 	<hr>
 
 	
-	<a name="load()"><!-- --></a>
+	<a name="initSpotless()"><!-- --></a>
 	<h3>
-		load
+		initSpotless
 		
 	</h3>
 
-	<kbd>private any <strong>load</strong>(string className)</kbd>
+	<kbd>private any <strong>initSpotless</strong>(string className)</kbd>
 
 	<br><br>
 
+	
+
+	
+
+	
+		
+		
+	
+
+	
+	
+
+	
+		<dl>
+		<dt><strong>Parameters:</strong></dt>
+		
+		<dd><code>className</code></dd>
+		
+		</dl>
+	
+
+	
+
+	
+
+	</dl>
+	<hr>
+
+	
+	<a name="loadClass()"><!-- --></a>
+	<h3>
+		loadClass
+		
+	</h3>
+
+	<kbd>public any <strong>loadClass</strong>(string className)</kbd>
+
+	<br><br>
+
+	
+		<p>Test for spotless availability and throw an error if not available.
+Used in module initialization.</p>
 	
 
 	
