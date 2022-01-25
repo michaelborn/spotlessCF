@@ -82,9 +82,8 @@ component {
 		// ];
 
 		// Binder Mappings
-		binder.map( "SpotlessLoader" ).to("#moduleMapping#.models.Loader").initWith({
-			// this MUST match the spotless version name in the downloaded jar.
-			spotlessVersion : "2.22.0"
+		binder.map( "SpotlessLoader@spotlessCF" ).to("#moduleMapping#.models.Loader").initWith({
+			// module constants here
 		});
 
 	}
@@ -93,7 +92,8 @@ component {
 	 * Fired when the module is registered and activated.
 	 */
 	function onLoad(){
-		spotlessLoader.ensureSpotlessAvailability();
+		// see if Spotless is available...
+		// getInstance( "Loader@spotlessCF" ).loadClass( "com.diffplug.spotless.Formatter" );
 	}
 
 	/**

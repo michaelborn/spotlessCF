@@ -1,32 +1,34 @@
-component {
-    property name="spotlessVersion" inject="coldbox:setting:spotlessVersion@spotlessCF";
+component accessors="true" {
 
     public component function init(){
         return this;
     }
+
+    public any function getSQLFormatter(){
+        return loadClass( "com.diffplug.spotless.sql.DBeaverSQLFormatter" );
+    }
     
     /**
-     * Test for spotless jar availability and throw an error if not available.
+     * Test for spotless availability and throw an error if not available.
      * Used in module initialization.
      */
-    public function ensureSpotlessAvailability(){
+    public function loadClass( required string className ){
         try {
-            var spotlessFormatter = loadSpotlessClass( "Formatter" );
+            return initSpotless( arguments.className);
         } catch( any exception ){
             throw(
                 message      = "Cannot load Spotless.Formatter class; is the Spotless jar loaded?",
                 type         = "spotlessCF.MissingJarException",
-                detail       = "Trying to load com.diffplug.spotless.Formatter gave us an exception: #exception.message#",
+                detail       = "Trying to load #arguments.className# gave us an exception: #exception.message#",
                 extendedInfo = serializeJSON( exception )
             );
         }
     }
 
-    private any function load( required string className ){
+    private any function initSpotless( required string className ){
         return createObject(
             type = "java",
-            className = "com.diffplug.spotless.#arguments.className#",
-            context = "/spotlessCF/lib/spotless-lib-#getSpotlessVersion()#/spotless-lib-#getSpotlessVersion()#.jar"
+            className = arguments.className
         );
     }
 }
